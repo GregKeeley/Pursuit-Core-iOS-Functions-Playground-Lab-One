@@ -109,7 +109,14 @@ let testCasesFour: [(Character, String, Int)] = [
 
 // Write a function called removeNils(from:) that takes an array of optional Ints and returns an array with them unwrapped with any nil values removed.
 
-// Your function here
+//func removeNils(from: [Int]?) -> [Int]  {
+//    var result = [(Int)] ?? 0
+//    for num in from {
+//        if num == [Int] {
+//            arrNum = num
+//        }
+//    } return result
+//}
 
 let testCasesFive: [([Int?], [Int])] = [
     (input: [1, nil, 9, nil, 10, nil], expectedOutput: [1,9,10]),
