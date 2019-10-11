@@ -51,9 +51,16 @@ for (inputOne, inputTwo, expectedOutput) in testCasesTwo {
 
 // Write a function named smallestValue(in:) that takes in an array of Doubles and returns the smallest Double
 
-func smallestValue(in arr1: [Double]) -> [Double] {
-var smallNum = (Int)
-    for num in 
+func smallestValue(in input: Double ...) -> Double {
+    var result = Double()
+    for num in input {
+        if num < result {
+           result = num
+        }
+    }
+    return result
+}
+
 
 let testCasesThree: [([Double], Double)] = [
     (input: [1.0,2,3,4,5,5], expectedOutput: 1.0),
@@ -66,13 +73,24 @@ let testCasesThree: [([Double], Double)] = [
 //    let output = smallestValue(in: input)
 //    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
 //}
+// Assert didn't work because - Cannot convert value of type '[Double]' to expected argument type 'Double'
 
 
 // Question Four
 
 // Write a function named occurrances(of:in:) that counts how many characters in a String match a specific character.
 
-// Your function here
+func occurrances(of inputOne: Character ..., in inputTwo: String) -> Int {
+   var result = (0)
+    for char in inputOne {
+        if inputTwo.contains(char) {
+            result += 1
+        }
+    }
+            return result
+}
+
+
 
 let testCasesFour: [(Character, String, Int)] = [
     (inputOne: "l", inputTwo: "hello", expectedOutput: 2),
@@ -104,4 +122,3 @@ let testCasesFive: [([Int?], [Int])] = [
 //    let output = removeNils(from: input)
 //    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
 //}
-
